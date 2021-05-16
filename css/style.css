@@ -1,0 +1,177 @@
+:root {
+  --color-primary-gradient-1: hsl(6, 100%, 80%);
+  --color-primary-gradient-2: hsl(335, 100%, 65%);
+  --color-neutral-pale-blue: hsl(243, 100%, 93%);
+  --color-neutral-grayish-blue: hsl(229, 7%, 55%);
+  --color-neutral-dark-blue: hsl(228, 56%, 26%);
+  --color-neutral-very-dark-blue: hsl(229, 57%, 11%); }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  min-height: 100vh;
+  background-color: var(--color-neutral-very-dark-blue);
+  background-image: url(../img/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 51%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.container {
+  max-width: 92rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 0 2rem; }
+
+.content-box {
+  background-color: var(--color-neutral-dark-blue);
+  flex: 0 0 38%;
+  border-radius: 1rem 9rem 1rem 1rem;
+  padding: 4.2rem 4rem;
+  margin-right: 3rem; }
+
+.logo {
+  margin-bottom: 3rem; }
+  .logo__img {
+    display: block;
+    width: 45%; }
+
+.icon-box {
+  display: flex; }
+
+.icon__item {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--color-neutral-very-dark-blue);
+  margin-right: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* || Progress bar */
+.bar {
+  background-color: var(--color-neutral-dark-blue);
+  height: 15rem;
+  border-radius: 1rem;
+  padding: 4.4rem 4rem;
+  min-width: 57%;
+  align-self: flex-end; }
+  .bar__detail {
+    color: var(--color-neutral-pale-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem; }
+    .bar__detail span {
+      font-weight: 700; }
+  .bar__box {
+    background-color: rgba(12, 18, 44, 0.55);
+    border-radius: 1rem;
+    min-width: 20rem;
+    padding: 1px; }
+    .bar__box-progress {
+      background-image: linear-gradient(to right, var(--color-primary-gradient-1), var(--color-primary-gradient-2));
+      border-radius: inherit;
+      padding: .8rem;
+      width: 75%;
+      margin: 2px;
+      position: relative;
+      animation: progressBar 1s ease-out; }
+      .bar__box-progress::after {
+        display: inline-block;
+        border-radius: 100%;
+        position: absolute;
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background-color: #fff;
+        top: .2rem;
+        right: .2rem;
+        cursor: pointer; }
+  .bar__count {
+    color: var(--color-neutral-pale-blue);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: .5rem; }
+
+/* || Globe GB Left */
+.globe {
+  width: 18rem;
+  height: 7.2rem;
+  background-color: #fff;
+  position: absolute;
+  right: 6rem;
+  border-radius: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .globe__count {
+    font-size: 4rem;
+    font-weight: 700;
+    display: flex; }
+    .globe__count span {
+      color: var(--color-neutral-grayish-blue);
+      font-size: 1.2rem;
+      align-self: center;
+      margin-left: 1rem;
+      letter-spacing: 1px; }
+  .globe::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-top: 2.5rem solid #fff;
+    border-left: 1.8rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    top: 80px;
+    right: 0; }
+
+/* || Animation */
+@keyframes progressBar {
+  0% {
+    width: 0; }
+  100% {
+    width: 75%; } }
+
+/*
+    || MEDIA QUERIES
+
+*/
+@media only screen and (max-width: 48.12em) {
+  body {
+    background-image: url(../img/bg-mobile.png);
+    background-size: cover; }
+  .container {
+    flex-direction: column; }
+  .content-box {
+    margin-right: 0;
+    margin-bottom: 3rem; }
+  .bar {
+    min-width: 100%;
+    padding: 4rem 3rem; }
+  .globe {
+    top: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 1rem;
+    width: 16rem;
+    height: 6.2rem; }
+    .globe::after {
+      display: none; } }
