@@ -24,6 +24,10 @@ Users should be able to:
 
 ### Screenshot
 
+Gif animation:
+
+![](/screenshot/design.gif)
+
 Desktop:
 
 ![](/screenshot/desktop.png "Desktop")
